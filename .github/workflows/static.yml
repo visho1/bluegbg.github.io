@@ -2,7 +2,7 @@ name: Deploy Vite Site to Pages
 
 on:
   push:
-    branches: ["main"] # Ändra till "master" om din branch heter det
+    branches: ["main"]
 
 permissions:
   contents: read
@@ -35,7 +35,8 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: './dist'
+          # TanStack Start sparar klientfilerna i dist/client vid statisk export
+          path: './dist/client' 
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
