@@ -7,6 +7,7 @@ import netlify from '@netlify/vite-plugin-tanstack-start'
 const config = defineConfig({
   resolve: { tsconfigPaths: true },
   plugins: [tailwindcss(), netlify(), tanstackStart(), viteReact()],
+  base: '/bluegbg.github.io/'
 })
 
 export default config
