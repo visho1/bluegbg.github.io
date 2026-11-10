@@ -28,7 +28,7 @@ export const Route = createFileRoute('/')({
 })
 
 const img = (src: string, w: number) =>
-  `/.netlify/images?url=${encodeURIComponent(src)}&w=${w}&fm=webp&q=75`
+  `${import.meta.env.BASE_URL}?url=${encodeURIComponent(src)}&w=${w}&fm=webp&q=75`
 
 const nav = [
   { href: '#meny', label: 'Meny' },

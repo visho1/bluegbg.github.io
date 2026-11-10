@@ -45,7 +45,7 @@ export const Route = createRootRoute({
       },
       {
         property: 'og:image',
-        content: '/.netlify/images?url=/img/hero.png&w=1200&fm=jpg',
+        content: '${import.meta.env.BASE_URL}?url=/img/hero.png&w=1200&fm=jpg',
       },
     ],
     links: [
