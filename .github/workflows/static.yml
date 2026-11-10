@@ -22,21 +22,28 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
+      # 1. Vi uppgraderar till Node 22 och tvingar fram npm 11+ för att undvika buggen
       - name: Set up Node
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22
+
+      # 2. Vi lägger till --legacy-peer-deps för att kringgå kraschen helt
       - name: Install dependencies
-        run: npm install
+        run: npm install --legacy-peer-deps
+
       - name: Build
         run: npm run build
+
       - name: Setup Pages
         uses: actions/configure-pages@v4
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # TanStack Start sparar klientfilerna i dist/client vid statisk export
           path: './dist/client' 
+
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
