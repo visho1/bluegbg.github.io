@@ -7,7 +7,7 @@ export const restaurant = {
   postal: '411 24 Göteborg',
   phone: '076-879 74 17',
   phoneHref: 'tel:+46768797417',
-  instagram: 'https://www.instagram.com/',
+  instagram: 'https://www.instagram.com/blue_gbg/',
   mapsUrl:
     'https://www.google.com/maps/search/?api=1&query=Blue+Brunch+%26+Bar+Vasagatan+11+G%C3%B6teborg',
   mapsEmbed:
