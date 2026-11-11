@@ -45,7 +45,7 @@ export const Route = createRootRoute({
       },
       {
         property: 'og:image',
-        content: '${import.meta.env.BASE_URL}img/hero.png&w=1200&fm=jpg',
+        content: '${import.meta.env.BASE_URL}img/hero.png',
       },
     ],
     links: [

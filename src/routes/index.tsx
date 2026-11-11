@@ -27,8 +27,10 @@ export const Route = createFileRoute('/')({
   component: Home,
 })
 
+// Vi tar bort encodeURIComponent och alla Netlify-parametrar (&w=...)
 const img = (src: string, w: number) =>
-  `${import.meta.env.BASE_URL}${encodeURIComponent(src)}&w=${w}&fm=webp&q=75`
+  `${import.meta.env.BASE_URL}${src.startsWith('/') ? src.slice(1) : src}`
+
 
 const nav = [
   { href: '#meny', label: 'Meny' },
