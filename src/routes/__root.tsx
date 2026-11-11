@@ -8,7 +8,7 @@ import '../styles.css'
 
 const siteName = 'Blue Brunch & Bar – Brunch på Vasagatan, Göteborg'
 const siteDescription =
-  'Brunchrestaurang och bar på Vasagatan 11 i Göteborg. Chicken & waffle, avocado toast, eggs benedict, pannkakor och kaffe. Boka bord.'
+  'Brunchrestaurang och bar på Vasagatan 11 i Göteborg. Chicken & waffle, avocado toast, eggs benedict, pannkakor och kaffe.'
 
 export const Route = createRootRoute({
   head: () => ({

@@ -2,12 +2,11 @@
 
 Hemsidan för Blue Brunch & Bar – brunchrestaurang och bar på Vasagatan 11, Göteborg.
 
-En responsiv, svenskspråkig one-pager med gästfavoriter, meny, om oss, recensioner, bordsbokning, öppettider och karta.
+En responsiv, svenskspråkig one-pager med gästfavoriter, meny, om oss, recensioner, öppettider och karta.
 
 ## Teknik
 
 - TanStack Start (React 19) + Vite, Tailwind CSS 4, shadcn/ui
-- Netlify Forms för bordsbokningsförfrågningar
 - Netlify Image CDN för optimerade bilder
 
 ## Kör lokalt
@@ -20,4 +19,3 @@ netlify dev
 ## Redigera innehåll
 
 Allt innehåll (adress, telefon, öppettider, meny, recensioner) finns i `src/data/restaurant.ts`.
-Bokningsförfrågningar hamnar under **Forms** i Netlify-panelen.

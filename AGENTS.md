@@ -4,12 +4,12 @@ This document describes the project for developers and AI agents working on this
 
 ## Project Overview
 
-The website for **Blue Brunch & Bar**, a brunch restaurant and bar at Vasagatan 11 in Gothenburg. It is a single Swedish-language page (`src/routes/index.tsx`) with sections for highlights, menu (tabs), about, reviews, a table-booking request form, opening hours and a map.
+The website for **Blue Brunch & Bar**, a brunch restaurant and bar at Vasagatan 11 in Gothenburg. It is a single Swedish-language page (`src/routes/index.tsx`) with sections for highlights, menu (tabs), about, reviews, opening hours and a map.
 
 ### Non-obvious decisions
 
 - **All restaurant content lives in `src/data/restaurant.ts`** (contact info, opening hours, menu, highlights, reviews). Edit content there, not in the page. Opening hours other than "opens Tuesday at 10" and the menu descriptions are best-effort and should be confirmed by the owner. Menu items carry real prices (kr, incl. VAT) from the restaurant’s ordering system; drinks and add-ons are `compact` categories rendered as a dense price list.
-- **Booking requests use Netlify Forms.** The form is `bordsbokning`, registered statically in `public/booking-form.html` and rendered by `src/components/BookingForm.tsx`, which POSTs to `/booking-form.html`. Field names must match in both files. A request is not a confirmed booking; staff confirm manually.
+- **Booking requests are currently hidden from the site.** The dormant Netlify form is `bordsbokning`, registered statically in `public/booking-form.html` and rendered by `src/components/BookingForm.tsx`, which POSTs to `/booking-form.html`. If restored, field names must match in both files. A request is not a confirmed booking; staff confirm manually.
 - **Images** in `public/img/` are AI-generated PNGs and are always served through the Netlify Image CDN (`img()` helper in the page) — never reference the originals directly.
 - Theme: navy/cobalt primary, cream background, amber accent, `--navy` custom colour (`bg-navy`). Fonts: Fraunces (headings) and Manrope (body), loaded from Google Fonts in `__root.tsx`.
 - The open/closed status is computed client-side in Europe/Stockholm time to avoid hydration mismatches.

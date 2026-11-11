@@ -10,7 +10,6 @@ import {
   X,
 } from 'lucide-react'
 
-import { BookingForm } from '@/components/BookingForm'
 import { Button } from '@/components/ui/button'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import {
@@ -49,7 +48,6 @@ function Home() {
         <MenuSection />
         <About />
         <Reviews />
-        <Booking />
         <FindUs />
       </main>
       <Footer />
@@ -124,9 +122,6 @@ function Header() {
               {n.label}
             </a>
           ))}
-          <Button asChild className="rounded-full px-5">
-            <a href="#boka">Boka bord</a>
-          </Button>
         </nav>
         <button
           className={cn('md:hidden', solid ? 'text-foreground' : 'text-white')}
@@ -142,7 +137,7 @@ function Header() {
           className="border-t bg-background px-5 pb-6 md:hidden"
           aria-label="Mobilmeny"
         >
-          {[...nav, { href: '#boka', label: 'Boka bord' }].map((n) => (
+          {nav.map((n) => (
             <a
               key={n.href}
               href={n.href}
@@ -246,13 +241,6 @@ function Hero() {
           pannkakor och riktigt kaffe – mitt på Vasagatan.
         </p>
         <div className="rise mt-9 flex flex-wrap items-center gap-4 [animation-delay:360ms]">
-          <Button
-            asChild
-            size="lg"
-            className="h-12 rounded-full bg-accent px-8 text-base text-accent-foreground hover:bg-accent/90"
-          >
-            <a href="#boka">Boka bord</a>
-          </Button>
           <Button
             asChild
             size="lg"
@@ -556,37 +544,6 @@ function Reviews() {
         >
           Läs fler recensioner på Google →
         </a>
-      </div>
-    </section>
-  )
-}
-
-function Booking() {
-  return (
-    <section id="boka" className="scroll-mt-16 py-20 md:py-28">
-      <div className="mx-auto grid max-w-content gap-12 px-5 lg:grid-cols-[1fr_1.3fr] lg:items-center">
-        <div>
-          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-primary/70">
-            Boka bord
-          </p>
-          <h2 className="mt-3 text-4xl font-medium tracking-tight md:text-5xl">
-            Spara en plats vid bordet
-          </h2>
-          <p className="mt-5 max-w-md text-lg text-muted-foreground">
-            Skicka en förfrågan så bekräftar vi ditt bord. Större sällskap,
-            födelsedagar och spontanbesök är alltid välkomna.
-          </p>
-          <a
-            href={restaurant.phoneHref}
-            className="mt-8 inline-flex items-center gap-3 text-lg font-semibold text-primary"
-          >
-            <span className="grid size-11 place-items-center rounded-full bg-secondary">
-              <Phone className="size-5" />
-            </span>
-            {restaurant.phone}
-          </a>
-        </div>
-        <BookingForm />
       </div>
     </section>
   )
